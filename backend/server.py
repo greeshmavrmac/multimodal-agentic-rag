@@ -46,7 +46,6 @@ allowed_origins = [
     "http://127.0.0.1:5174",
     "http://localhost:5177",
     "http://127.0.0.1:5177",
-    "https://multimodal-agentic-rag-a-git-071d59-greeshmas-projects-17cc8f78.vercel.app",
 ]
 
 app.add_middleware(
