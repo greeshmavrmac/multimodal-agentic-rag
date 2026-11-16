@@ -58,23 +58,19 @@ rag_tutorials/multimodal_agentic_rag/
 
 Start the backend:
 
-```bash
-cd rag_tutorials/multimodal_agentic_rag/frontend
-npm install
-npm run dev -- --port 5177
+```powershell
+cd rag_tutorials/multimodal_agentic_rag/backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+$env:GOOGLE_API_KEY="your-google-ai-studio-key"
+python server.py
 ```
 
-The frontend runs at:
+The backend runs at:
 
 ```text
-http://localhost:5177
-```
-
-If the backend is on a different port:
-
-```bash
-VITE_API_URL=http://localhost:8897 npm run dev -- --port 5177
-
+http://localhost:8897
 ```
 
 
