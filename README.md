@@ -88,9 +88,6 @@ Click **+** in the VS Code terminal panel to create a second terminal.
 
 Run:
 
-```powershell
-```
-
 Set the frontend API URL:
 
 ```powershell
