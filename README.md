@@ -56,44 +56,59 @@ rag_tutorials/multimodal_agentic_rag/
 
 ## Run Locally
 
+### Terminal 1 — Backend
+
+Set your API key:
+
+```powershell
+$env:GOOGLE_API_KEY="YOUR_REAL_API_KEY"
+```
+
+Check:
+
+```powershell
+python -c "import os; print('API KEY LOADED:', bool(os.getenv('GOOGLE_API_KEY')))"
+```
+
+It should say:
+
+```text
+API KEY LOADED: True
+```
+
 Start the backend:
 
 ```powershell
-cd rag_tutorials/multimodal_agentic_rag/backend
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-$env:GOOGLE_API_KEY="your-google-ai-studio-key"
-python server.py
+python -m uvicorn server:app --host 0.0.0.0 --port 8897
 ```
 
-The backend runs at:
+### Terminal 2 — Frontend
 
-```text
-http://localhost:8897
-```
+Click **+** in the VS Code terminal panel to create a second terminal.
 
-
-Start the frontend in another terminal:
+Run:
 
 ```powershell
-cd rag_tutorials/multimodal_agentic_rag/frontend
-npm install
+```
+
+Set the frontend API URL:
+
+```powershell
+$env:VITE_API_URL="http://localhost:8897"
+```
+
+Start the frontend:
+
+```powershell
 npm.cmd run dev -- --port 5177
 ```
 
-The frontend runs at:
+Then open:
 
 ```text
 http://localhost:5177
 ```
 
-If the backend is on a different port:
-
-```powershell
-$env:VITE_API_URL="http://localhost:8897"
-npm.cmd run dev -- --port 5177
-```
 
 ## Try It
 
